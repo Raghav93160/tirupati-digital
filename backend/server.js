@@ -5,6 +5,8 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const enquiryRoute = require("./Routes/enquiryRoutes");
 const contactRoute = require("./Routes/contactRoutes");
+const adminRoute = require("./Routes/adminRoutes");
+const broadbandPlanRoute = require("./Routes/broadbandPlanRoutes");
 
 // Database
 mongoose
@@ -23,6 +25,8 @@ app.use(cors());
 // Routes
 app.use("/api", enquiryRoute);
 app.use("/api", contactRoute);
+app.use("/api", broadbandPlanRoute);
+app.use("/api", adminRoute);
 
 const port = process.env.PORT || 5000;
 
